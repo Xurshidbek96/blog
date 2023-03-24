@@ -14,5 +14,23 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return 1;
 });
+
+Route::get('/test/{a}/{b}/{z}', function ($a, $b, $z) {
+
+    $c = $a + $b + $z;
+
+    return $c ;
+
+});
+
+// start Begin 6
+Route::get('/begin5/{a}', function($a){
+    $v = pow($a, 3);
+    $s = 6*$a*$a;
+
+    return 'hajmi : '.$v.'<br> Yuzasi : '.$s.'<br>';
+});
+// end begin 6
+
