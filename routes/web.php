@@ -14,23 +14,37 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return 1;
+    return view('welcome');
 });
 
-Route::get('/test/{a}/{b}/{z}', function ($a, $b, $z) {
+Route::get('about', function () {
+    return view('about');
+});
 
-    $c = $a + $b + $z;
 
-    return $c ;
+
+Route::prefix('user/')->name('user.')->group(function () {
+
+    Route::get('index', function () {
+        return view('user.index');
+    })->name('index');
+
+    Route::get('about', function () {
+        return view('user.about');
+    })->name('about');
+
+    Route::get('contact', function () {
+        return view('user.contact');
+    })->name('contact');
 
 });
 
-// start Begin 6
-Route::get('/begin5/{a}', function($a){
-    $v = pow($a, 3);
-    $s = 6*$a*$a;
+Route::prefix('admin/')->name('admin.')->group(function () {
 
-    return 'hajmi : '.$v.'<br> Yuzasi : '.$s.'<br>';
+    Route::get('index', function () {
+        return view('admin.index');
+    })->name('index');
+
 });
-// end begin 6
+
 
