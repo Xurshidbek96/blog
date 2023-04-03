@@ -10,8 +10,15 @@ class SiteController extends Controller
         return view('welcome');
     }
 
-    public function about($id, $name){
+    public function about($a, $b){
 
-        return view('about', compact('id', 'name'));
+        if($a > $b)
+            $max = $a;
+        elseif($a < $b)
+            $max = $b;
+        else
+            $max = $a;
+
+        return view('about', compact('max'));
     }
 }

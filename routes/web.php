@@ -18,7 +18,7 @@ use App\Http\Controllers\UserController;
 
 Route::get('/', [SiteController::class, 'index']);
 
-Route::get('/about/{id}/{name}', [SiteController::class, 'about']);
+Route::get('/about/{a}/{b}', [SiteController::class, 'about']);
 
 
 Route::prefix('user/')->name('user.')->group(function () {
