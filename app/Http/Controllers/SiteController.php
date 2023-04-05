@@ -10,15 +10,8 @@ class SiteController extends Controller
         return view('welcome');
     }
 
-    public function about($a, $b){
-
-        if($a > $b)
-            $max = $a;
-        elseif($a < $b)
-            $max = $b;
-        else
-            $max = $a;
-
-        return view('about', compact('max'));
+    public function groups(){
+        return view('pages.groups');
     }
+
 }

@@ -17,28 +17,6 @@ use App\Http\Controllers\UserController;
 */
 
 Route::get('/', [SiteController::class, 'index']);
-
-Route::get('/about/{a}/{b}', [SiteController::class, 'about']);
-
-
-Route::prefix('user/')->name('user.')->group(function () {
-
-    Route::get('index', [UserController::class, 'index'])->name('index');
-
-    Route::get('about', function () {
-        return view('user.about');
-    })->name('about');
-
-    Route::get('contact', function () {
-        return view('user.contact');
-    })->name('contact');
-
-});
-
-Route::prefix('admin/')->name('admin.')->group(function () {
-
-    Route::get('index', [AdminController::class, 'index'])->name('index');
-
-});
+Route::get('/groups', [SiteController::class, 'groups']);
 
 
