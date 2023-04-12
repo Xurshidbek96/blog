@@ -1,9 +1,7 @@
 <?php
 
-use App\Http\Controllers\Admin\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SiteController;
-use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,5 +16,6 @@ use App\Http\Controllers\UserController;
 
 Route::get('/', [SiteController::class, 'index']);
 Route::get('/groups', [SiteController::class, 'groups']);
+Route::get('/teachers', [SiteController::class, 'teachers']);
 
 

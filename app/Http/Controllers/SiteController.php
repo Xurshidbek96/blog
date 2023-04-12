@@ -14,4 +14,8 @@ class SiteController extends Controller
         return view('pages.groups');
     }
 
+    public function teachers(){
+        return view('pages.teachers');
+    }
+
 }
