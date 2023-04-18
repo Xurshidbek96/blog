@@ -21,20 +21,22 @@
                         <h1 class="text-white m-0">O'rindiqni buyurtma qiling</h1>
                     </div>
                     <div class="card-body rounded-bottom bg-primary p-5">
-                        <form>
+                        <form action="{{ route('store') }}" method="post">
+                            @csrf
                             <div class="form-group">
-                                <input type="text" class="form-control border-0 p-4" placeholder="Ismingiz" required="required" />
+                                <input type="text" name="name" class="form-control border-0 p-4" placeholder="Ismingiz" required="required" />
                             </div>
                             <div class="form-group">
-                                <input type="tel" class="form-control border-0 p-4" placeholder="Telefon raqamingiz" required="required" />
+                                <input type="number" name="phone" class="form-control border-0 p-4" placeholder="Telefon raqamingiz" required="required" />
                             </div>
                             <div class="form-group">
-                                <select class="custom-select border-0 px-4" style="height: 47px;">
+                                <input type="email" name="email" class="form-control border-0 p-4" placeholder="email" required="required" />
+                                {{-- <select class="custom-select border-0 px-4" style="height: 47px;">
                                     <option selected>Sinfni tanlang</option>
                                     <option value="1">Group Bugirsoq</option>
                                     <option value="2">Group Alpomish</option>
                                     <option value="3">Group Profesor</option>
-                                </select>
+                                </select> --}}
                             </div>
                             <div>
                                 <button class="btn btn-secondary btn-block border-0 py-3" type="submit">Yuborish</button>
