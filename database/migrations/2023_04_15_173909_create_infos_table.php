@@ -15,9 +15,9 @@ return new class extends Migration
     {
         Schema::create('infos', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->nullable();
-            $table->string('icon')->default('img.png');
-            $table->text('title')->nullable();
+            $table->string('title')->nullable();
+            $table->string('icon')->nullable()->default('img.png');
+            $table->text('description')->nullable();
             $table->integer('status')->default(0);
             $table->timestamps();
         });
