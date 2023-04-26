@@ -32,4 +32,8 @@ Route::prefix('admin/')->name('admin.')->group(function(){
     Route::get('infos/index', [InfoController::class, 'index'])->name('infos.index');
     Route::get('infos/create', [InfoController::class, 'create'])->name('infos.create');
     Route::post('infos/store', [InfoController::class, 'store'])->name('infos.store');
+    Route::get('infos/show/{id}', [InfoController::class, 'show'])->name('infos.show');
+    Route::get('infos/edit/{id}', [InfoController::class, 'edit'])->name('infos.edit');
+    Route::put('infos/update/{id}', [InfoController::class, 'update'])->name('infos.update');
+    Route::delete('infos/destroy/{id}', [InfoController::class, 'destroy'])->name('infos.destroy');
 });
