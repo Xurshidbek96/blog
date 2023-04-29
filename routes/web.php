@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\Admin\InfoController;
+use App\Http\Controllers\InfoController;
+use App\Http\Controllers\Admin\TeacherController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SiteController;
 
@@ -29,11 +30,7 @@ Route::prefix('admin/')->name('admin.')->group(function(){
         return view('admin.layouts.dashboard');
     });
 
-    Route::get('infos/index', [InfoController::class, 'index'])->name('infos.index');
-    Route::get('infos/create', [InfoController::class, 'create'])->name('infos.create');
-    Route::post('infos/store', [InfoController::class, 'store'])->name('infos.store');
-    Route::get('infos/show/{id}', [InfoController::class, 'show'])->name('infos.show');
-    Route::get('infos/edit/{id}', [InfoController::class, 'edit'])->name('infos.edit');
-    Route::put('infos/update/{id}', [InfoController::class, 'update'])->name('infos.update');
-    Route::delete('infos/destroy/{id}', [InfoController::class, 'destroy'])->name('infos.destroy');
+    Route::resource('/infos', InfoController::class);
+    Route::resource('/teachers', TeacherController::class);
+
 });
