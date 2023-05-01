@@ -35,7 +35,7 @@
 								<tr>
 									<td>{{++$loop->index}}</td>
 									<td>{{$item->title}}</td>
-                                    <td><img src="/images" alt="" width="100px"></td>
+                                    <td><img src="/icons/{{ $item->icon }}" alt="" width="100px"></td>
                                     <td>{{$item->description }}</td>
                                     <td>
 										<form action="{{ route('admin.infos.destroy', $item->id) }}" method="POST">
