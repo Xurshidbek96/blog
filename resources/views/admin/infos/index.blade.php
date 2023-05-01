@@ -53,6 +53,7 @@
 							@endforeach
 						</tbody>
 					</table>
+                    {{$infos->links()}}
 
 				</div>
 
