@@ -10,7 +10,7 @@ active
     <main>
         <div class="head-title">
             <div class="left">
-                <h1>Dashboard</h1>
+                <h1>Salom {{ Auth::user()->name }}</h1>
                 <ul class="breadcrumb">
                     <li>
                         <a href="#">Dashboard</a>

@@ -18,13 +18,13 @@ use App\Http\Controllers\SiteController;
 
 Route::get('/', [SiteController::class, 'index']);
 Route::get('/groups', [SiteController::class, 'groups']);
-Route::get('/teachers', [SiteController::class, 'teachers']);
+Route::get('/teachers', [SiteController::class, 'teachers'])->middleware('auth');
 
 Route::post('/store', [SiteController::class, 'store'])->name('store');
 
 
 // Admin routes
-Route::prefix('admin/')->name('admin.')->group(function(){
+Route::prefix('admin/')->name('admin.')->middleware('auth')->group(function(){
 
     Route::get('index', function (){
         return view('admin.layouts.dashboard');
@@ -34,3 +34,7 @@ Route::prefix('admin/')->name('admin.')->group(function(){
     Route::resource('/teachers', TeacherController::class);
 
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
