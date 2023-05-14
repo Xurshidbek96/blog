@@ -26,11 +26,11 @@
                     <form class="create__inputs" action="{{ route('admin.infos.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <strong> title :</strong>
-                        <input type="text" name="title" class="form-control">
+                        <input type="text" name="title" value="{{ old('title') }}" class="form-control">
                         @error('title') {{ $message }} @enderror<br>
 
                         <strong> Description :</strong>
-                        <input type="text" name="description" class="form-control">
+                        <input type="text" name="description" value="{{ old('description') }}" class="form-control">
                         @error('description') {{ $message }} @enderror<br>
 
                         <strong> Rasm(png yoki jpg) :</strong>

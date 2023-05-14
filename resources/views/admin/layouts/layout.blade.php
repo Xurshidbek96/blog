@@ -34,17 +34,42 @@
 					<span class="text">Infos</span>
 				</a>
 			</li>
+
 			<li class="">
 				<a href="#">
-					<i class='bx bxs-shopping-bag-alt' ></i>
-					<span class="text">O'qituvchilar</span>
+					<span class="text"></span>
 				</a>
 			</li>
 
             <li>
-				<a href="#">
+				<a href="{{ route('admin.humans.index') }}">
 					<i class='bx bxs-shopping-bag-alt' ></i>
-					<span class="text">Sinflar</span>
+					<span class="text">Odamlar</span>
+				</a>
+			</li>
+            <li>
+				<a href="{{ route('admin.numbers.index') }}">
+					<i class='bx bxs-shopping-bag-alt' ></i>
+					<span class="text">Raqamlar</span>
+				</a>
+			</li>
+
+            <li class="">
+				<a href="#">
+					<span class="text"></span>
+				</a>
+			</li>
+
+            <li>
+				<a href="{{ route('admin.categories.index') }}">
+					<i class='bx bxs-shopping-bag-alt' ></i>
+					<span class="text">Kategoriylar</span>
+				</a>
+			</li>
+            <li>
+				<a href="{{ route('admin.posts.index') }}">
+					<i class='bx bxs-shopping-bag-alt' ></i>
+					<span class="text">Postlar</span>
 				</a>
 			</li>
 
@@ -63,7 +88,7 @@
                         @csrf
                         <button class="text">Logout</button>
                     </form>
-					
+
 				</a>
 			</li>
 		</ul>

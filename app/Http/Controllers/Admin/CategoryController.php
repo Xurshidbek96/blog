@@ -4,8 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Category;
 
-class TeacherController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +15,8 @@ class TeacherController extends Controller
      */
     public function index()
     {
-        //
+        $categories = Category::orderBy('id', 'DESC')->paginate(5);
+        return view('admin.categories.index', compact('categories'));
     }
 
     /**
@@ -24,7 +26,7 @@ class TeacherController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.categories.create');
     }
 
     /**
@@ -35,7 +37,8 @@ class TeacherController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Category::create($request->all());
+        return redirect()->route('admin.categories.index')->with('success', 'Success done');
     }
 
     /**
@@ -46,7 +49,8 @@ class TeacherController extends Controller
      */
     public function show($id)
     {
-        //
+        $category = Category::find($id);
+        return view('admin.categories.show', compact('category'));
     }
 
     /**
@@ -57,7 +61,9 @@ class TeacherController extends Controller
      */
     public function edit($id)
     {
-        //
+        $category = Category::find($id);
+
+        return view('admin.categories.edit', compact('category'));
     }
 
     /**
@@ -69,7 +75,8 @@ class TeacherController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        Category::find($id)->update($request->all());
+        return redirect()->route('admin.categories.index')->with('success', 'Success done');
     }
 
     /**
@@ -80,6 +87,7 @@ class TeacherController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Category::find($id)->delete();
+        return redirect()->route('admin.categories.index')->with('success', 'Delete done');
     }
 }

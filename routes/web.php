@@ -2,6 +2,10 @@
 
 use App\Http\Controllers\Admin\InfoController;
 use App\Http\Controllers\Admin\TeacherController;
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\PostController;
+use App\Http\Controllers\Admin\HumanController;
+use App\Http\Controllers\Admin\NumberController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SiteController;
 
@@ -24,7 +28,7 @@ Route::post('/store', [SiteController::class, 'store'])->name('store');
 
 
 // Admin routes
-Route::prefix('admin/')->name('admin.')->middleware('auth')->group(function(){
+Route::prefix('admin/')->name('admin.')->group(function(){
 
     Route::get('index', function (){
         return view('admin.layouts.dashboard');
@@ -32,6 +36,10 @@ Route::prefix('admin/')->name('admin.')->middleware('auth')->group(function(){
 
     Route::resource('/infos', InfoController::class);
     Route::resource('/teachers', TeacherController::class);
+    Route::resource('/categories', CategoryController::class);
+    Route::resource('/posts', PostController::class);
+    Route::resource('/humans', HumanController::class);
+    Route::resource('/numbers', NumberController::class);
 
 });
 
