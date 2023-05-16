@@ -11,4 +11,8 @@ class Human extends Model
 
     protected $guarded = [];
 
+    public function number(){
+        return $this->belongsTo(Number::class);
+    }
+
 }

@@ -39,6 +39,19 @@
                 </div>
               </div>
 
+              <div class="form-group row mb-4">
+                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"> Numbers</label>
+                <div class="col-sm-12 col-md-7">
+                    <select name="number_id" class="form-control">
+                        <option value="{{ $human->number->id }}">{{ $human->number->name }}</option>
+                        @foreach ($numbers as $item)
+                            <option value="{{ $item->id }}">{{ $item->name }}</option>
+                        @endforeach
+
+                    </select>
+                </div>
+            </div>
+
               </div>
               <div class="form-group row mb-4">
                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>

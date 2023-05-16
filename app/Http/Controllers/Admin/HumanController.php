@@ -27,7 +27,8 @@ class HumanController extends Controller
      */
     public function create()
     {
-        return view('admin.humans.create');
+        $numbers = Number::doesntHave('human')->get();
+        return view('admin.humans.create', compact('numbers'));
     }
 
     /**
@@ -62,8 +63,9 @@ class HumanController extends Controller
     public function edit($id)
     {
         $human = Human::find($id);
+        $numbers = Number::doesntHave('human')->get();
 
-        return view('admin.humans.edit', compact('human'));
+        return view('admin.humans.edit', compact('human', 'numbers'));
     }
 
     /**

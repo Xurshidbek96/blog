@@ -29,7 +29,7 @@ active
                         #
                       </th>
                       <th>Mijoz ismi</th>
-                      
+                      <th>Raqami</th>
                       <th>Action</th>
                     </tr>
                   </thead>
@@ -46,7 +46,7 @@ active
                           {{ ++$loop->index }}
                         </td>
                         <td>{{ $item->name }}</td>
-
+                        <td>{{ $item->number->name ?? 'Bog`lanmagan' }}</td>
                         <td>
                             <form action="{{ route('admin.humans.destroy', $item->id) }}" method="POST">
                                 @csrf
