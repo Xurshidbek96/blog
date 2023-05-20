@@ -14,5 +14,6 @@ class Human extends Model
     public function number(){
         return $this->belongsTo(Number::class);
     }
+    
 
 }
