@@ -29,7 +29,7 @@ active
                         #
                       </th>
                       <th>Maqola nomi </th>
-
+                      <th>Kategoriyasi</th>
                       <th>Rasm</th>
                       <th>Action</th>
                     </tr>
@@ -46,8 +46,8 @@ active
                         <td>
                           {{ ++$loop->index }}
                         </td>
-                        <td>{{ $item->name }}</td>
-
+                        <td>{{ $item->title }}</td>
+                        <td>{{ $item->name  }}</td>
                         <td>
                           <img alt="image" src="/images/{{ $item->img }}" width="59">
                         </td>

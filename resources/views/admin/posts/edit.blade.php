@@ -40,6 +40,19 @@
               </div>
 
               <div class="form-group row mb-4">
+                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"> Kateforiyasi</label>
+                <div class="col-sm-12 col-md-7">
+                    <select name="category_id" class="form-control">
+                        <option value="{{ $post->category_id }}">{{ $post->category->name }}</option>
+                        @foreach ($categories as $item)
+                            <option value="{{ $item->id }}">{{ $item->name }}</option>
+                        @endforeach
+
+                    </select>
+                </div>
+            </div>
+
+              <div class="form-group row mb-4">
                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Ma'lumotlar </label>
                 <div class="col-sm-12 col-md-7">
                   <textarea class="summernote" name="info" value="{!! $post->info !!}">{!! $post->info !!}</textarea>
@@ -55,7 +68,7 @@
                 </div>
               </div>
 
-              
+
               <div class="form-group row mb-4">
                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Rasm</label>
                 <div class="col-sm-12 col-md-7">

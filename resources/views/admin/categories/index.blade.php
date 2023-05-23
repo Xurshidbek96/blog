@@ -29,7 +29,7 @@ active
                         #
                       </th>
                       <th>Nomi</th>
-
+                      <th>Maqola nomi</th>
                       <th>Action</th>
                     </tr>
                   </thead>
@@ -46,6 +46,9 @@ active
                           {{ ++$loop->index }}
                         </td>
                         <td>{{ $item->name }}</td>
+                        <td>@foreach($item->posts as $item)
+                            {{ $item->title }}@endforeach
+                        </td>
 
                         <td>
                             <form action="{{ route('admin.categories.destroy', $item->id) }}" method="POST">
