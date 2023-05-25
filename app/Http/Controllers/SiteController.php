@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Info;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class SiteController extends Controller
 {
     public function index(){
-        return view('welcome');
+        $infos = Info::orderBy('id', 'DESC')->take(2)->get();
+        return view('welcome', compact('infos'));
     }
 
     public function groups(){
@@ -27,7 +29,7 @@ class SiteController extends Controller
             'phone' => $request->phone,
             'email' => $request->email,
         ]);
-        
+
         return back();
     }
 

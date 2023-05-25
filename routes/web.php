@@ -22,7 +22,7 @@ use App\Http\Controllers\SiteController;
 
 Route::get('/', [SiteController::class, 'index']);
 Route::get('/groups', [SiteController::class, 'groups']);
-Route::get('/teachers', [SiteController::class, 'teachers'])->middleware('auth');
+Route::get('/teachers', [SiteController::class, 'teachers']);
 
 Route::post('/store', [SiteController::class, 'store'])->name('store');
 
