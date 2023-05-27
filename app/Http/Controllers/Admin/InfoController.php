@@ -60,7 +60,7 @@ class InfoController extends Controller
 
         $info->update($requestData);
 
-        return redirect()->route('admin.infos.index');
+        return redirect()->route('admin.infos.index')->with('success', 'Ma`lumot tahrirlandi');
     }
 
     public function destroy(Info $info)
@@ -70,7 +70,7 @@ class InfoController extends Controller
 
         $info->delete();
 
-        return redirect()->route('admin.infos.index');
+        return redirect()->route('admin.infos.index')->with('danger', 'Deleted');
     }
 
     public function unlink_file(Info $info){
