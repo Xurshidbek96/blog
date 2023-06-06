@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Events\AuditEvent;
 use App\Http\Controllers\Controller;
 use App\Models\Info;
 use Illuminate\Http\Request;
@@ -65,7 +66,9 @@ class InfoController extends Controller
 
     public function destroy(Info $info)
     {
-
+        $user = auth()->user()->name;
+        // return $user ;
+        event(new AuditEvent('delete', 'infos', $user, $info));
         $this->unlink_file($info);
 
         $info->delete();

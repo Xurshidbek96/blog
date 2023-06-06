@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\InfoController;
-use App\Http\Controllers\Admin\TeacherController;
+// use App\Http\Controllers\Admin\TeacherController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\HumanController;
@@ -28,14 +28,14 @@ Route::post('/store', [SiteController::class, 'store'])->name('store');
 
 
 // Admin routes
-Route::prefix('admin/')->name('admin.')->group(function(){
+Route::prefix('admin/')->name('admin.')->middleware('auth')->group(function(){
 
     Route::get('index', function (){
         return view('admin.layouts.dashboard');
     });
 
     Route::resource('/infos', InfoController::class);
-    Route::resource('/teachers', TeacherController::class);
+    // Route::resource('/teachers', TeacherController::class);
     Route::resource('/categories', CategoryController::class);
     Route::resource('/posts', PostController::class);
     Route::resource('/humans', HumanController::class);
