@@ -30,7 +30,7 @@
                         @error('title') {{ $message }} @enderror<br>
 
                         <strong> Description :</strong>
-                        <input type="text" name="description" value="{{ old('description') }}" class="form-control">
+                        <textarea class="ckeditor form-control" name="description" value="{{ old('description') }}"></textarea>
                         @error('description') {{ $message }} @enderror<br>
 
                         <strong> Rasm(png yoki jpg) :</strong>
@@ -45,5 +45,12 @@
             </div>
         </main>
         <!-- MAIN -->
+
+        <script src="//cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+               $('.ckeditor').ckeditor();
+            });
+        </script>
 
 @endsection

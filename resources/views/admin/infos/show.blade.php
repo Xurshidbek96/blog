@@ -36,7 +36,7 @@ active
                                 <td>
                                     <p>Des : </p>
                                 </td>
-                                <td><b>{{ $info->description }}</b></td>
+                                <td><b>{!! $info->description !!}</b></td>
                             </tr>
 
 
