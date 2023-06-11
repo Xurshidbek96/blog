@@ -20,26 +20,26 @@ use App\Http\Controllers\SiteController;
 |
 */
 
-Route::get('/', [SiteController::class, 'index']);
-Route::get('/groups', [SiteController::class, 'groups']);
-Route::get('/teachers', [SiteController::class, 'teachers']);
+Route::get('/', function(){
+    return redirect('/index');
+});
 
-Route::post('/store', [SiteController::class, 'store'])->name('store');
-
+Route::auto('/', SiteController::class);
 
 // Admin routes
-Route::prefix('admin/')->name('admin.')->middleware('auth')->group(function(){
+Route::prefix('admin/')->name('admin.')->middleware(['auth', 'admin'])->group(function(){
 
     Route::get('index', function (){
         return view('admin.layouts.dashboard');
     });
 
-    Route::resource('/infos', InfoController::class);
-    // Route::resource('/teachers', TeacherController::class);
-    Route::resource('/categories', CategoryController::class);
-    Route::resource('/posts', PostController::class);
-    Route::resource('/humans', HumanController::class);
-    Route::resource('/numbers', NumberController::class);
+    Route::resources([
+        '/infos' => InfoController::class,
+        '/categories' => CategoryController::class,
+        '/posts' => PostController::class,
+        '/humans' => HumanController::class,
+        '/numbers' => NumberController::class
+    ]);
 
 });
 

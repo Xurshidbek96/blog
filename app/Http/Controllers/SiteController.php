@@ -8,20 +8,20 @@ use Illuminate\Support\Facades\DB;
 
 class SiteController extends Controller
 {
-    public function index(){
+    public function get_index(){
         $infos = Info::orderBy('id', 'DESC')->take(2)->get();
         return view('welcome', compact('infos'));
     }
 
-    public function groups(){
+    public function get_groups(){
         return view('pages.groups');
     }
 
-    public function teachers(){
+    public function get_teachers(){
         return view('pages.teachers');
     }
 
-    public function store(Request $request){
+    public function post_store(Request $request){
 
         // return $request ;
         DB::table('orders')->insert([

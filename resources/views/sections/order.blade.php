@@ -21,7 +21,7 @@
                         <h1 class="text-white m-0">O'rindiqni buyurtma qiling</h1>
                     </div>
                     <div class="card-body rounded-bottom bg-primary p-5">
-                        <form action="{{ route('store') }}" method="post">
+                        <form action="/store" method="post">
                             @csrf
                             <div class="form-group">
                                 <input type="text" name="name" class="form-control border-0 p-4" placeholder="Ismingiz" required="required" />

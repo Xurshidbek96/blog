@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4b3af047515101aed2d267f086d90f1d",
+    "content-hash": "c7214899e4bc2bd87ae680056e0367d3",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1159,6 +1159,76 @@
                 }
             ],
             "time": "2021-10-07T12:57:01+00:00"
+        },
+        {
+            "name": "izniburak/laravel-auto-routes",
+            "version": "v1.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/izniburak/laravel-auto-routes.git",
+                "reference": "f196f912fc024840252456d7c3373e8d4013400a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/izniburak/laravel-auto-routes/zipball/f196f912fc024840252456d7c3373e8d4013400a",
+                "reference": "f196f912fc024840252456d7c3373e8d4013400a",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.2.5|^8.0.2"
+            },
+            "require-dev": {
+                "illuminate/routing": "^8.0",
+                "phpunit/phpunit": "^8.5 || ^9.4"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Buki\\AutoRoute\\AutoRouteServiceProvider"
+                    ],
+                    "aliases": {
+                        "AutoRoute": "Buki\\AutoRoute\\AutoRouteFacade"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Buki\\AutoRoute\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "İzni Burak Demirtaş",
+                    "email": "info@burakdemirtas.org",
+                    "homepage": "https://burakdemirtas.org"
+                }
+            ],
+            "description": "Auto Route Generating (Auto-Discovery) Package for Laravel",
+            "homepage": "https://github.com/izniburak/laravel-auto-routes",
+            "keywords": [
+                "auto-route",
+                "laravel",
+                "route",
+                "route-discovery",
+                "route-generator",
+                "router"
+            ],
+            "support": {
+                "issues": "https://github.com/izniburak/laravel-auto-routes/issues",
+                "source": "https://github.com/izniburak/laravel-auto-routes/tree/v1.6.0"
+            },
+            "funding": [
+                {
+                    "url": "https://buymeacoff.ee/izniburak",
+                    "type": "custom"
+                }
+            ],
+            "time": "2022-03-27T21:40:58+00:00"
         },
         {
             "name": "laravel/framework",
