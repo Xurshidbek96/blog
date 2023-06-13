@@ -24,6 +24,12 @@ Route::get('/', function(){
     return redirect('/index');
 });
 
+Route::get('/lang/{lang}', function($lang){
+    session(['lang' => $lang]);
+
+    return back();
+});
+
 Route::auto('/', SiteController::class);
 
 // Admin routes

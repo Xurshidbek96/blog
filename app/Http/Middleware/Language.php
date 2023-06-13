@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 
-class Test
+class Language
 {
     /**
      * Handle an incoming request.
@@ -16,7 +16,13 @@ class Test
      */
     public function handle(Request $request, Closure $next)
     {
-        // \Log::info("This middleware working ". date('H:i:s d-m-Y'));
+        if(session()->has('lang'))
+            $lang = session('lang');
+        else
+            $lang = 'uz';
+
+        \App::setLocale($lang);
+        
         return $next($request);
     }
 }
