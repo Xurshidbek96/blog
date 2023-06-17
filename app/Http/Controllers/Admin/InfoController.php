@@ -22,7 +22,7 @@ class InfoController extends Controller
         return view('admin.infos.create');
     }
 
-    public function store(InfoStoreRequest $request)
+    public function store(Request $request)
     {
 
         $requestData = $request->all();

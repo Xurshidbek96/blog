@@ -25,13 +25,29 @@
 
                     <form class="create__inputs" action="{{ route('admin.infos.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
-                        <strong> title :</strong>
-                        <input type="text" name="title" value="{{ old('title') }}" class="form-control">
-                        @error('title') {{ $message }} @enderror<br>
+                        <strong> title UZB:</strong>
+                        <input type="text" name="title_uz" value="{{ old('title_uz') }}" class="form-control">
+                        @error('title_uz') {{ $message }} @enderror<br>
 
-                        <strong> Description :</strong>
-                        <textarea class="ckeditor form-control" name="description" value="{{ old('description') }}"></textarea>
-                        @error('description') {{ $message }} @enderror<br>
+                        <strong> title RU:</strong>
+                        <input type="text" name="title_ru" value="{{ old('title_ru') }}" class="form-control">
+                        @error('title_ru') {{ $message }} @enderror<br>
+
+                        <strong> title Eng:</strong>
+                        <input type="text" name="title_en" value="{{ old('title_en') }}" class="form-control">
+                        @error('title_en') {{ $message }} @enderror<br>
+
+                        <strong> Description UZ:</strong>
+                        <textarea class="ckeditor form-control" name="description_uz" value="{{ old('description_uz') }}"></textarea>
+                        @error('description_uz') {{ $message }} @enderror<br>
+
+                        <strong> Description RU:</strong>
+                        <textarea class="ckeditor form-control" name="description_ru" value="{{ old('description_ru') }}"></textarea>
+                        @error('description_ru') {{ $message }} @enderror<br>
+
+                        <strong> Description EN:</strong>
+                        <textarea class="ckeditor form-control" name="description_en" value="{{ old('description_en') }}"></textarea>
+                        @error('description_en') {{ $message }} @enderror<br>
 
                         <strong> Rasm(png yoki jpg) :</strong>
                         <input type="file" name="icon" class="form-control"><br>

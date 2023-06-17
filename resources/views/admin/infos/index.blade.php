@@ -29,9 +29,9 @@
 						<thead>
 							<tr>
 								<th>№</th>
-								<th>Title</th>
+								<th>Title Uz</th>
                                 <th>Icon</th>
-                               
+
                                 <th>Action</th>
 							</tr>
 						</thead>
@@ -45,7 +45,7 @@
 					        @foreach($infos as $item)
 								<tr>
 									<td>{{++$loop->index}}</td>
-									<td>{{ $item->title }}</td>
+									<td>{{ $item->title_uz }}</td>
                                     <td><img src="/icons/{{ $item->icon }}" alt="" width="100px"></td>
 
                                     <td>

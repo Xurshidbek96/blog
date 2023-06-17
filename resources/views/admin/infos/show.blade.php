@@ -27,16 +27,44 @@ active
 
                             <tr>
                                 <td>
-                                    <p>Info : </p>
+                                    <p>Info UZ : </p>
                                 </td>
-                                <td><b>{{ $info->title }}</b></td>
+                                <td><b>{{ $info->title_uz }}</b></td>
                             </tr>
 
                             <tr>
                                 <td>
-                                    <p>Des : </p>
+                                    <p>Info RU : </p>
                                 </td>
-                                <td><b>{!! $info->description !!}</b></td>
+                                <td><b>{{ $info->title_ru }}</b></td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <p>Info EN : </p>
+                                </td>
+                                <td><b>{{ $info->title_en }}</b></td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <p>Des UZ: </p>
+                                </td>
+                                <td><b>{!! $info->description_uz !!}</b></td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <p>Des RU: </p>
+                                </td>
+                                <td><b>{!! $info->description_ru !!}</b></td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <p>Des EN: </p>
+                                </td>
+                                <td><b>{!! $info->description_en !!}</b></td>
                             </tr>
 
 
